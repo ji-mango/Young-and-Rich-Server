@@ -21,13 +21,6 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.1</version>
         <configuration>
-          <archive>
-            <manifest>
-              <addClasspath>true</addClasspath>
-              <classpathPrefix>lib</classpathPrefix>
-              <mainClass>com.hackathon.youngandrich.common.main.demo</mainClass>
-            </manifest>
-          </archive>
           <warSourceDirectory>web</warSourceDirectory>
           <webappDirectory>${basedir}/target</webappDirectory>
         </configuration>
