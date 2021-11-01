@@ -20,11 +20,6 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.1</version>
         <configuration>
-          <archive>
-            <manifest>
-              <mainClass>com.hackathon.youngandrich.TemplateApplication</mainClass>
-            </manifest>
-          </archive>
           <warSourceDirectory>web</warSourceDirectory>
           <webappDirectory>${basedir}/target</webappDirectory>
         </configuration>
@@ -54,6 +49,13 @@
       <artifactId>spring-test</artifactId>
       <version>5.2.15.RELEASE</version>
       <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-shade-plugin</artifactId>
+      <version>3.2.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
