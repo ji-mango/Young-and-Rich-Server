@@ -1,7 +1,5 @@
 package com.hackathon.youngandrich.config;
 
-import javax.sql.DataSource;
-
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -15,9 +13,11 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.TransactionManager;
 
+import javax.sql.DataSource;
+
 @Configuration
 @PropertySource("classpath:application.properties")
-@MapperScan(basePackages = { "com.hackathon.youngandrich" })
+@MapperScan(basePackages = {"com.hackathon.youngandrich"})
 public class MyBatisConfig {
     private ApplicationContext applicationContext;
 
@@ -59,4 +59,5 @@ public class MyBatisConfig {
         transactionManager.setDataSource(dataSource());
         return transactionManager;
     }
+
 }

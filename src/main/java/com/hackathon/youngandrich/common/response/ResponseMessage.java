@@ -1,14 +1,11 @@
 package com.hackathon.youngandrich.common.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
 import org.springframework.http.HttpStatus;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
-import lombok.Data;
-
 @Data
-@JsonInclude(Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseMessage<T> {
     private final String errorMessage;
     private final T result;
@@ -37,4 +34,5 @@ public class ResponseMessage<T> {
         this.errorMessage = httpStatus.getReasonPhrase();
         this.result = result;
     }
+
 }

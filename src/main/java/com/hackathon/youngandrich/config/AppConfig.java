@@ -1,7 +1,6 @@
 package com.hackathon.youngandrich.config;
 
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
@@ -10,16 +9,15 @@ import org.springframework.stereotype.Service;
 
 @Configuration
 @ComponentScan(
-        basePackages = { "com.hackathon.youngandrich" },
+        basePackages = {"com.hackathon.youngandrich"},
         useDefaultFilters = false,
         includeFilters = {
-                @Filter(
+                @ComponentScan.Filter(
                         type = FilterType.ANNOTATION,
-                        classes = { Service.class, Repository.class }
+                        classes = {Service.class, Repository.class}
                 )
         }
 )
 @Import(MyBatisConfig.class)
 public class AppConfig {
-
 }

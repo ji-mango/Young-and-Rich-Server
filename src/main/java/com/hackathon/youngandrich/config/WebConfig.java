@@ -1,13 +1,12 @@
 package com.hackathon.youngandrich.config;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -19,10 +18,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 @ComponentScan(
-        basePackages = { "com.hackathon.youngandrich" },
+        basePackages = {"com.hackathon.youngandrich"},
         useDefaultFilters = false,
         includeFilters = {
-                @Filter(
+                @ComponentScan.Filter(
                         type = FilterType.ANNOTATION,
                         classes = {
                                 Controller.class, ControllerAdvice.class, RestController.class,
@@ -31,13 +30,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
                 )
         }
 )
-@Import(SwaggerConfig.class)
 public class WebConfig implements WebMvcConfigurer {
     @Bean
-    public MethodValidationPostProcessor methodValidationPostProcessor() {
+    public MethodValidationPostProcessor methodValidationPostProcessor () {
         return new MethodValidationPostProcessor();
     }
-
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/views/", ".jsp");
@@ -45,10 +42,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }
