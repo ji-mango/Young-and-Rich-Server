@@ -10,12 +10,12 @@
 	</parent>
 	<groupId>com.hackathon</groupId>
 	<artifactId>youngandrich</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>youngandrich</name>
-	<description>Demo project for Spring Boot</description>
+
 	<properties>
-		<java.version>11</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 

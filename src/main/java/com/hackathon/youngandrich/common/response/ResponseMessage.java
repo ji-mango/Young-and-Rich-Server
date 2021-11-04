@@ -1,5 +1,6 @@
 package com.hackathon.youngandrich.common.response;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
