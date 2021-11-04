@@ -226,7 +226,7 @@
 				<directory>src/main/resource-${environment}</directory>
 			</resource>
 			<resource>
-				<directory>src/amin/resources</directory>
+				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
 	</build>
