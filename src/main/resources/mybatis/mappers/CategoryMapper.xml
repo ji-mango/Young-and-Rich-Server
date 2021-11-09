@@ -25,4 +25,16 @@
         where uc.status = 0
           and a.userId = #{userId};
     </select>
+
+    <insert id="createCategory" parameterType="Category"  useGeneratedKeys="true" keyProperty="userCategoryId">
+        insert into UserCategory (categoryId, accountId, setPrice)
+        values (#{categoryId}, #{accountId}, #{setPrice});
+    </insert>
+
+    <select id="checkCategory" resultType="Integer">
+        select userCategoryId
+        from UserCategory
+        where categoryId = #{categoryId}
+        and accountId = #{accountId}
+    </select>
 </mapper>

@@ -18,9 +18,11 @@ public class UserService {
     }
 
     // 이메일 중복체크
-
     public Boolean checkUserEmail(String email) {
         return userRepository.checkUserEmail(email);
     }
+
+    // 회원가입
+    public boolean signUp(User user) {return userRepository.signUp(user);}
 
 }

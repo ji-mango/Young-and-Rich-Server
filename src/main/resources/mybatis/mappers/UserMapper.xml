@@ -16,4 +16,9 @@
         where email = #{email}
     </select>
 
+    <insert id="signUp" parameterType="User"  useGeneratedKeys="true" keyProperty="userId">
+        insert into User (email, password, userName, phoneNumber)
+        values (#{email}, #{password}, #{userName}, #{phoneNumber});
+    </insert>
+
 </mapper>

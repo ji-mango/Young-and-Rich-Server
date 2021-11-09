@@ -13,4 +13,7 @@ public interface UserMapper {
 
     // 이메일 중복체크 API
     Integer checkUserEmail (String email);
+
+    // 회원가입 API
+    int signUp(User user);
 }

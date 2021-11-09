@@ -25,4 +25,9 @@ public class UserRepository {
         }
         else return false;
     }
+
+    // 회원가입 API
+    public boolean signUp(User user) {
+        return userMapper.signUp(user) > 0;
+    }
 }

@@ -10,5 +10,7 @@
     <typeAliases>
         <typeAlias type="com.hackathon.youngandrich.user.model.entity.User" alias="User"/>
         <typeAlias type="com.hackathon.youngandrich.category.model.response.CategoryResponse" alias="CategoryResponse"/>
+        <typeAlias type="com.hackathon.youngandrich.category.model.entity.Category" alias="Category"/>
+        <typeAlias type="com.hackathon.youngandrich.account.model.response.AccountResponse" alias = "AccountResponse"/>
     </typeAliases>
 </configuration>
