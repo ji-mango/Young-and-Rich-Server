@@ -9,7 +9,6 @@
 
     <typeAliases>
         <typeAlias type="com.hackathon.youngandrich.user.model.entity.User" alias="User"/>
-        <!--    <typeAlias type="com.hackathon.youngandrich.movie.model.entity.Actor" alias="Actor"/>-->
-        <!--    <typeAlias type="com.hackathon.youngandrich.movie.model.entity.Minh" alias="Minh"/>-->
+        <typeAlias type="com.hackathon.youngandrich.category.model.response.CategoryResponse" alias="CategoryResponse"/>
     </typeAliases>
 </configuration>

@@ -3,8 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hackathon.youngandrich.user.mapper.UserMapper">
-    <select id="test" resultType="User">
-        SELECT *
-        FROM user;
+
+    <select id="login" resultType="Int" parameterType="User">
+        select userId
+        from User
+        where email = #{email} and password = #{password};
     </select>
+
 </mapper>

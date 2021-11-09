@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hackathon.youngandrich.category.mapper.CategoryMapper">
+    <resultMap id="resultCategory" type="CategoryResponse">
+        <id property="id" column="id" />
+        <result property="accountId" column="accountId" />
+        <result property="categoryName" column="categoryName" />
+        <result property="setPrice" column="setPrice" />
+    </resultMap>
+
+    <select id="getCategory" resultMap="resultCategory" parameterType = "long">
+        select uc.userCategoryId, a.accountId, c.categoryName, uc.setPrice, x.usedPrice
+        from UserCategory uc
+                 join Category c on uc.categoryId = c.categoryId
+                 join Account a on a.accountId = uc.accountId
+                 left join (
+            select sum(p.price) usedPrice, p.userCategoryId
+            from Payment p
+            where p.status = 0
+              and DATE_FORMAT(p.createdAt,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m')
+            group by p.userCategoryId
+        ) x on x.userCategoryId = uc.userCategoryId
+        where uc.status = 0
+          and a.userId = #{userId};
+    </select>
+</mapper>
