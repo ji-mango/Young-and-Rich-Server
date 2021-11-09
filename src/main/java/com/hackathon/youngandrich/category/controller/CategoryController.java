@@ -1,17 +1,13 @@
 package com.hackathon.youngandrich.category.controller;
 
-import com.hackathon.youngandrich.category.model.request.CategoryPostRequest;
 import com.hackathon.youngandrich.category.model.response.CategoryListResponse;
-import com.hackathon.youngandrich.category.model.response.CategoryPostResponse;
 import com.hackathon.youngandrich.category.model.response.CategoryResponse;
 import com.hackathon.youngandrich.category.service.CategoryService;
 import com.hackathon.youngandrich.common.response.ResponseMessage;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import javax.validation.constraints.Positive;
 import java.util.List;
 

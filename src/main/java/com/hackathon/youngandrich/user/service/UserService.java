@@ -16,4 +16,11 @@ public class UserService {
     public int login(User user) {
         return userRepository.login(user);
     }
+
+    // 이메일 중복체크
+
+    public Boolean checkUserEmail(String email) {
+        return userRepository.checkUserEmail(email);
+    }
+
 }

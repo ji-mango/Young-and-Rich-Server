@@ -10,4 +10,7 @@ import java.util.List;
 public interface UserMapper {
     // 로그인 API
     int login(User user);
+
+    // 이메일 중복체크 API
+    Integer checkUserEmail (String email);
 }

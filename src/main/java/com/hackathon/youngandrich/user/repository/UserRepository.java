@@ -16,4 +16,13 @@ public class UserRepository {
     public int login(User user) {
         return userMapper.login(user);
     }
+
+    // 이메일 중복 체크 API
+    public Boolean checkUserEmail(String email) {
+        Integer result = userMapper.checkUserEmail(email);
+        if(result == null) {
+            return true;
+        }
+        else return false;
+    }
 }

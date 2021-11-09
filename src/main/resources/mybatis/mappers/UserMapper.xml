@@ -10,4 +10,10 @@
         where email = #{email} and password = #{password};
     </select>
 
+    <select id="checkUserEmail" resultType="Integer">
+        select UserId
+        from User
+        where email = #{email}
+    </select>
+
 </mapper>

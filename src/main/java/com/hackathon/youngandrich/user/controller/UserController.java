@@ -2,6 +2,7 @@ package com.hackathon.youngandrich.user.controller;
 
 import com.hackathon.youngandrich.common.response.ResponseMessage;
 import com.hackathon.youngandrich.user.model.entity.User;
+import com.hackathon.youngandrich.user.model.request.UserEmailRequest;
 import com.hackathon.youngandrich.user.model.request.UserLoginRequest;
 import com.hackathon.youngandrich.user.model.response.UserCreateResponse;
 import com.hackathon.youngandrich.user.service.UserService;
@@ -32,5 +33,12 @@ public class UserController {
             return new ResponseMessage<>(UserCreateResponse.from(user));
     }
 
-    //
+    // 회원가입 이메일 중복체크 API
+    @PostMapping("/users/email")
+    public ResponseMessage<Boolean> login(@RequestBody @Valid UserEmailRequest userEmailRequest) {
+        String email = userEmailRequest.getEmail();
+        Boolean result = userService.checkUserEmail(email);
+
+        return new ResponseMessage<>(result);
+    }
 }
